@@ -12,6 +12,16 @@ A userscript that opens Reddit posts in a functional in-page reader modal, keepi
 
 ## Installation
 
+### Recommended: Install via Greasy Fork
+
+Install **Reddit Post in Pop-up Modal** directly from Greasy Fork:
+
+**[Install Reddit Post in Pop-up Modal](https://greasyfork.org/en/scripts/602778-reddit-post-in-pop-up-modal)**
+
+You'll need a userscript manager, such as Tampermonkey or Violentmonkey, installed in your browser.
+
+### Alternative: Manual Installation
+
 1. Install a userscript manager such as Tampermonkey or Violentmonkey in your browser.
 2. Open [reddit-post-modal.uc.js](./reddit-post-modal.uc.js) and copy its contents into a new userscript, or download the file and import it into your userscript manager.
 3. Save and enable the script.
