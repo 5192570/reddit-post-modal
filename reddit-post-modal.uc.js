@@ -5,7 +5,7 @@
 // @description  Open Reddit posts in a pop-up modal without leaving the current page.
 // @author       5192570
 // @match        https://www.reddit.com/*
-// @grant        none
+// @grant        GM_openInTab
 // @license      MIT
 // @homepageURL  https://github.com/5192570/reddit-post-modal
 // @supportURL   https://github.com/5192570/reddit-post-modal/issues
