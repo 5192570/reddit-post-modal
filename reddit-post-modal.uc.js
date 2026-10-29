@@ -3,7 +3,6 @@
 // @version      1.11.1
 // @description  Open Reddit posts in a functional in-page reader modal.
 // @match        https://www.reddit.com/*
-// @match        https://sh.reddit.com/*
 // @grant        GM_openInTab
 // @run-at       document-start
 // ==/UserScript==
@@ -231,10 +230,7 @@
   function isModalHost(hostname) {
     const host = hostname.toLowerCase();
 
-    return (
-      host === 'www.reddit.com' ||
-      host === 'sh.reddit.com'
-    );
+    return host === 'www.reddit.com';
   }
 
   const COMMENTS_PATH_RE =

@@ -5,7 +5,6 @@ A userscript that opens Reddit posts in a functional in-page reader modal, keepi
 ## Features
 
 - Opens Reddit post links in an overlay reader modal.
-- Supports Reddit's `www.reddit.com` and `sh.reddit.com` interfaces.
 - Includes modal navigation, a back-to-post control, and an open-in-new-tab action.
 - Closes with Escape or by clicking outside the modal.
 - Uses the original userscript manager's `GM_openInTab` API when available, with a browser fallback.
@@ -19,7 +18,7 @@ A userscript that opens Reddit posts in a functional in-page reader modal, keepi
 
 ## Compatibility
 
-The script metadata targets `https://www.reddit.com/*` and `https://sh.reddit.com/*`. Reddit's page structure may change over time, which can affect compatibility.
+The script targets `https://www.reddit.com/*`. Reddit's page structure may change over time, which can affect compatibility.
 
 ## Version
 
