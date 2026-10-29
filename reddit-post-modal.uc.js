@@ -1,10 +1,14 @@
 // ==UserScript==
 // @name         Reddit Post in Pop-up Modal
+// @namespace    https://github.com/5192570/reddit-post-modal
 // @version      1.11.2
-// @description  Open Reddit posts in a functional in-page reader modal.
+// @description  Open Reddit posts in a pop-up modal without leaving the current page.
+// @author       5192570
 // @match        https://www.reddit.com/*
-// @grant        GM_openInTab
-// @run-at       document-start
+// @grant        none
+// @license      MIT
+// @homepageURL  https://github.com/5192570/reddit-post-modal
+// @supportURL   https://github.com/5192570/reddit-post-modal/issues
 // ==/UserScript==
 
 (() => {
