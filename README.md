@@ -1,4 +1,4 @@
-# Reddit Post on Pop Up Modal
+# Reddit Post in Pop-up Modal
 
 A userscript that opens Reddit posts in a functional in-page reader modal, keeping the user on the current feed while reading posts and comments.
 
