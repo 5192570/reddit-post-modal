@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Reddit Post on Pop Up Modal
+// @name         Reddit Post in Pop-up Modal
 // @version      1.11.2
 // @description  Open Reddit posts in a functional in-page reader modal.
 // @match        https://www.reddit.com/*
