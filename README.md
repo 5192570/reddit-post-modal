@@ -5,6 +5,7 @@ A userscript that opens Reddit posts in a functional in-page reader modal, keepi
 ## Features
 
 - Opens Reddit post links in an overlay reader modal.
+- Leaves embedded video/GIF player clicks to Reddit's native playback handlers.
 - Includes modal navigation, a back-to-post control, and an open-in-new-tab action.
 - Closes with Escape or by clicking outside the modal.
 - Uses the original userscript manager's `GM_openInTab` API when available, with a browser fallback.
@@ -22,4 +23,4 @@ The script targets `https://www.reddit.com/*`. Reddit's page structure may chang
 
 ## Version
 
-Current userscript version: **1.11.1**.
+Current userscript version: **1.11.2**.

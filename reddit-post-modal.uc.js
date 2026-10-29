@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Reddit Post on Pop Up Modal
-// @version      1.11.1
+// @version      1.11.2
 // @description  Open Reddit posts in a functional in-page reader modal.
 // @match        https://www.reddit.com/*
 // @grant        GM_openInTab
@@ -144,6 +144,30 @@
       (item) =>
         item?.matches?.(
           'button, input, select, textarea, [role="button"], [contenteditable="true"], notification-context-menu, [data-id="notification-item-prevent-link"]'
+        )
+    );
+  }
+
+  // Let Reddit handle clicks on embedded media players. With autoplay disabled,
+  // these clicks are playback controls, even when the player sits inside an
+  // anchor that points to Reddit's media viewer.
+  const NATIVE_MEDIA_INTERACTION_SELECTOR = [
+    'video',
+    'audio',
+    'shreddit-player',
+    'faceplate-video',
+    'reddit-video-player',
+    '[data-testid*="video-player"]',
+    '[data-testid*="media-player"]',
+    '.video-player',
+    '.media-player'
+  ].join(',');
+
+  function isNativeMediaInteraction(event) {
+    return getClickPath(event).some(
+      (item) =>
+        item?.matches?.(
+          NATIVE_MEDIA_INTERACTION_SELECTOR
         )
     );
   }
@@ -579,7 +603,10 @@
       'click',
       (event) => {
         // Preserve modified clicks for the browser's native behavior.
-        if (!isPlainLeftClick(event)) {
+        if (
+          !isPlainLeftClick(event) ||
+          isNativeMediaInteraction(event)
+        ) {
           return;
         }
 
@@ -1700,7 +1727,10 @@
   window.addEventListener(
     'click',
     (event) => {
-      if (!isPlainLeftClick(event)) {
+      if (
+        !isPlainLeftClick(event) ||
+        isNativeMediaInteraction(event)
+      ) {
         return;
       }
 
