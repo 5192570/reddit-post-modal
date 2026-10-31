@@ -1263,6 +1263,33 @@
     };
   }
 
+  // Pause media already playing in the feed before covering it with the modal.
+  // Do not resume it on close: the user may have intentionally paused or moved on.
+  function pauseBackgroundMedia() {
+    const visited = new Set();
+    const pending = [document];
+
+    while (pending.length) {
+      const root = pending.pop();
+      if (!root || visited.has(root)) continue;
+      visited.add(root);
+
+      root.querySelectorAll?.('video, audio').forEach((media) => {
+        if (!media.paused && !media.ended) {
+          try {
+            media.pause();
+          } catch (_) {
+            // Ignore media elements controlled by a custom player.
+          }
+        }
+      });
+
+      root.querySelectorAll?.('*').forEach((element) => {
+        if (element.shadowRoot) pending.push(element.shadowRoot);
+      });
+    }
+  }
+
   function openModal(url) {
     if (
       document.getElementById(MODAL_ID) ||
@@ -1270,6 +1297,8 @@
     ) {
       return;
     }
+
+    pauseBackgroundMedia();
 
     const {
       modal,
